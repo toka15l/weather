@@ -1,0 +1,16 @@
+.observation-selector {
+    background-color: aliceblue;
+}
+
+.breadcrumb {
+    background-color: lightblue;
+    color: white;
+}
+
+.breadcrumb a {
+    color: white;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: white;
+}

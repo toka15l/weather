@@ -1,0 +1,21 @@
+.jumbotron {
+    background-color: lightblue;
+    color: gray;
+}
+
+.jumbotron h1 {
+    color: white;
+}
+
+.icon {
+    display: none;
+    color: white;
+    float: right;
+    opacity: .5;
+}
+
+@media (min-width: 768px) {
+    .icon {
+        display: block;
+    }
+}
