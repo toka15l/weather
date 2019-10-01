@@ -3,6 +3,7 @@ import weather from "../api/weather";
 import StateSelector from "./StateSelector";
 import StationSelector from "./StationSelector";
 import './ObservationSelector.css'
+import './StateStationCard.css'
 
 class StateStationCard extends React.Component {
     state = { selectedState: null, selectedStation: null, stations: [] };
@@ -24,20 +25,20 @@ class StateStationCard extends React.Component {
     resetState = () => {
         this.setState({ selectedState: null, selectedStation: null });
         this.props.onStationSelected(null);
-    }
+    };
 
     resetStation = () => {
         this.setState({ selectedStation: null });
         this.props.onStationSelected(null);
-    }
+    };
 
     renderBreadcrumbs() {
         if (this.state.selectedState && this.state.selectedStation) {
             return (
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="#" onClick={ this.resetState }>{ this.state.selectedState }</a></li>
-                        <li className="breadcrumb-item"><a href="#" onClick={ this.resetStation }>{ this.state.selectedStation }</a></li>
+                        <li className="breadcrumb-item"><button onClick={ this.resetState }>{ this.state.selectedState }</button></li>
+                        <li className="breadcrumb-item"><button onClick={ this.resetStation }>{ this.state.selectedStation }</button></li>
                     </ol>
                 </nav>
             );
@@ -62,6 +63,6 @@ class StateStationCard extends React.Component {
             </div>
         );
     }
-};
+}
 
 export default StateStationCard;
